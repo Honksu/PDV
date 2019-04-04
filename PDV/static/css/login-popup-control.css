@@ -1,0 +1,60 @@
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px; 
+}
+
+/* Modal Content/Box */
+.login-content {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    width: 20%; /* Could be more or less, depending on screen size */
+}
+
+.login-create-user{
+    display: none; /* Hidden by default */
+}
+
+/* The Close Button */
+.login-close {
+    /* Position it in the top right corner outside of the modal */
+    position: absolute;
+    right: 50px;
+    top: 20 ; 
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.login-create-new-profile {
+    background-color: seagreen;
+}
+
+/* Close button on hover */
+.login-close:hover,
+.login-close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}

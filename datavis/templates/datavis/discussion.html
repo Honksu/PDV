@@ -1,0 +1,35 @@
+{% extends "datavis/index.html" %}
+{% block content %}
+	<head>
+		{% load static %}
+    	<link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
+	</head>
+	<body>
+
+			<div class="homepage-container container header">
+        		<h1>League is Abyss</h1>
+
+    		</div>
+
+    <p>Below you can see data for the league.</p>
+
+	<div id="kok">
+	<table style="width:100%">
+	  <tr>
+    	<th>League</th>
+		<th>Date</th>
+		<th>Currency</th>
+		<th>Price in chaos</th>
+      </tr>
+	{% for Price in data %}
+      <tr>
+    	<td>{{ Price.League }}</td>
+		<td>{{ Price.date }}</td>
+		<td>{{ Price.Currency }}</td>
+		<td>{{ Price.Value }}</td>
+      </tr>
+    {% endfor %}
+	</table>
+	</div>
+	</body>
+{% endblock content %}
