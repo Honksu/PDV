@@ -1,0 +1,33 @@
+body {
+    font: 12px sans-serif;
+    color: white; 
+    background: #00151c;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: white;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.y.axis text {
+
+    fill: white;
+}
+
+.x.axis text {
+    fill: white;
+}
+
+.line {
+    fill: none;
+    stroke: white;
+    stroke-width: 1.5px;
+}
+
+

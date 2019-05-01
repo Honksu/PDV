@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\datavis",
+    "\\datavis\\static\\css",
+    "\\datavis\\static\\js",
+    "\\datavis\\templates",
+    "\\datavis\\templates\\datavis",
+    "\\PDV"
+  ],
+  "SelectedNode": "\\PDV\\views.py",
+  "PreviewInSolutionExplorer": false
+}
