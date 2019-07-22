@@ -31,3 +31,11 @@ def fetchData(request, league, currency):
     data = CurrencyData.objects.filter(Currency = currency, League = league)
     
     return JsonResponse(list(data.values('date', 'Value')), safe=False)
+
+def about(request):
+
+    return render(request, 'datavis/about.html', context = None)
+
+def gallery(request):
+
+    return render(request, 'datavis/gallery.html', context = None)
