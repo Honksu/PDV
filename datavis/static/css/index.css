@@ -1,4 +1,27 @@
 
+.navigation-bar {
+	text-align:center;
+	list-style-type: none;
+	overflow: hidden;
+	background-color: mediumpurple;
+	width: 100%;
+}
+.navigation-bar li a:hover {
+	background-color: mediumseagreen;
+}
+	
+.navigation-bar li {
+	float: left;
+}	
+.navigation-bar li a {
+	color: black;
+	text-align: center;
+	padding: 14px 100px;
+	text-decoration: none;
+	font-size: 28px;
+}
+
+
 #image {
     background-position: center;
     background-repeat: no-repeat;
@@ -20,7 +43,7 @@
     color: white;
     text-align: center;
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -29,7 +52,7 @@
     text-align: center;
     color: white;
     position: absolute;
-    top: 90%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

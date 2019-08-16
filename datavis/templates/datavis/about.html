@@ -1,0 +1,25 @@
+{% extends "datavis/index.html" %}
+{% block content %}
+
+    <head>
+        <meta charset="utf-8">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+    </head>
+
+    <body>
+		<div id="text">
+			<p> This site is originally a coursework for Tampere University's course in information management.
+			The idea is to convert existing data (ideally an API, but in this case using poe.ninja site's datadumps)
+			into knowledge for a user. The data used is PoE's past leagues' currency price data, which is processed
+			and stored into a database. The user can search for the price development of a single currency in spesific
+			league, and the graph shows the price with respect to time in the league.
+			</p>
+			
+			<p> In the future the site will be updated with newer leagues' data and more currency options for queries. There's
+			also a plan to create a price predictor for item trading based on past leagues' data using machine learning.
+			</p>
+		</div>
+    </body>
+{% endblock content %}
+

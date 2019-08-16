@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('pricedata', views.pdv, name='pdv'),
     path('pricedata/api/<str:league>/<str:currency>', views.fetchData, name='fetchData'),
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('about', views.about, name='about'),
+    path('gallery', views.gallery, name='gallery')
 ]

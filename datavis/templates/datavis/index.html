@@ -1,76 +1,84 @@
 ﻿<!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+		
+
+		<title>PoE currency price data</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+
+	</head>
+	
     
+	<body>
 
-    <title>PoE currency price data</title>
+		<header>
+		
+			<ul class="navigation-bar">
+				<li><a href="{% url 'index' %}"> Home</a></li>
+				<li><a href="{% url 'gallery' %}"> Gallery</a></li>
+				<li><a href="{% url 'about' %}"> About</a></li>
+			</ul>
+		</header>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<div id="image">
+			<img src="{% static "images/background.jpg" %}">
+		</div>
 
+		<div id="header">
+			<h1>Welcome to PoE price data</h1>
+		</div>
 
+		<div id="content-wrap">
 
-</head>
-    
-<body>
+			<form class="form-inline" action="{% url 'pdv' %}" method="post">
+				<div class="form-group">
+					<label for="league" class="leaguelabels">Select league:</label>
+					<select class="form-control" name="league" id="league">
+						<option>Abyss</option>
+						<option>Bestiary</option>
+						<option>Incursion</option>
+						<option>Delve</option>
+						<option>Betrayal</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="currency" class="leaguelabels">Select currency:</label>
+					<select class="form-control" name="currency" id="currency">
+						<option>Exalted Orb</option>
+						<option>Orb of Annulment</option>
+						<option>Orb of Transmutation</option>
+						<option>Orb of Chance</option>
+						<option>Silver Coin</option>
+						<option>Orb of Alchemy</option>
+						<option>Chromatic Orb</option>
+						<option>Orb of Regret</option>
+						<option>Orb of Scouring</option>
+						<option>Orb of Alteration</option>
+						<option>Orb of Augmentation</option>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-default">Fetch price data</button>
+			</form>
 
+		</div>
 
+		<div id="info">
+			<h2>Currency searched: {{query.Currency}}</h2>
+			<h2>League searched: {{ query.League }}</h2>
+		</div>
 
-    <div id="image">
-        <img src="{% static "images/background.jpg" %}">
-    </div>
+		{% block content %}
+		{% endblock content %}
 
-    <div id="header">
-        <h1>Welcome to PoE price data</h1>
-    </div>
-
-    <div id="content-wrap">
-
-        <form class="form-inline" action="{% url 'pdv' %}" method="post">
-            <div class="form-group">
-                <label for="league" class="leaguelabels">Select league:</label>
-                <select class="form-control" name="league" id="league">
-                    <option>Abyss</option>
-                    <option>Bestiary</option>
-                    <option>Incursion</option>
-                    <option>Delve</option>
-                    <option>Betrayal</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="currency" class="leaguelabels">Select currency:</label>
-                <select class="form-control" name="currency" id="currency">
-                    <option>Exalted Orb</option>
-                    <option>Orb of Annulment</option>
-                    <option>Orb of Transmutation</option>
-                    <option>Orb of Chance</option>
-                    <option>Silver Coin</option>
-                    <option>Orb of Alchemy</option>
-                    <option>Chromatic Orb</option>
-                    <option>Orb of Regret</option>
-                    <option>Orb of Scouring</option>
-                    <option>Orb of Alteration</option>
-                    <option>Orb of Augmentation</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-default">Fetch price data</button>
-        </form>
-
-    </div>
-
-    <div id="info">
-        <h2>Currency searched: {{query.Currency}}</h2>
-        <h2>League searched: {{ query.League }}</h2>
-    </div>
-
-    {% block content %}
-    {% endblock content %}
-
-</body>
+	</body>
 </html >

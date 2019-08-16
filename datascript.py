@@ -16,7 +16,11 @@ write_rows = []
 data_path = "data/originals"
 
 files = glob.glob(data_path + os.sep + "*.csv")
+<<<<<<< HEAD
 id = 0
+=======
+
+>>>>>>> e2bf2a934fd101535a3a3f7238c42857b6893c32
 for name in files:
 
     write_rows = []
@@ -28,7 +32,11 @@ for name in files:
         for row in csv_reader:
             if line_count == 0:
                 print(f'Column names are {", ".join(row)}')
+<<<<<<< HEAD
                 write_row = ["ID","League","date","Currency","PriceCurrency","Value","CurrencyID"]
+=======
+                write_row = ["League","date","Currency","PriceCurrency","Value","CurrencyID"]
+>>>>>>> e2bf2a934fd101535a3a3f7238c42857b6893c32
                 write_rows.append(write_row)
                 line_count += 1
                 
@@ -37,9 +45,14 @@ for name in files:
                 if row[3] == "Chaos Orb" and row[2] in currencies:                
                     index = str(currencies.index(row[2]))
                     line_count += 1
+<<<<<<< HEAD
                     write_row = [str(id), row[0], row[1], row[2], row[3], str(row[4]), index]
                     write_rows.append(write_row)
                     id += 1
+=======
+                    write_row = [ row[0], row[1], row[2], row[3], str(row[4]), index]
+                    write_rows.append(write_row)
+>>>>>>> e2bf2a934fd101535a3a3f7238c42857b6893c32
                     
                     
         print(f'Processed {line_count} lines.')
@@ -51,6 +64,10 @@ for name in files:
         currency_writer = csv.writer(currency_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         
         for row in (write_rows):
+<<<<<<< HEAD
             currency_writer.writerow([ row[0], row[1], row[2], row[3], row[4], row[5], row[6]])
+=======
+            currency_writer.writerow([ row[0], row[1], row[2], row[3], row[4], row[5]])
+>>>>>>> e2bf2a934fd101535a3a3f7238c42857b6893c32
 
 
